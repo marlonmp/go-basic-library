@@ -1,0 +1,16 @@
+version: '2.3'
+services:
+  go-basic-library:
+    restart: "no"
+    image: postgres:14.2-alpine
+    container_name: go-basic-library
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=go-basic-library
+      - POSTGRES_PASSWORD=go-basic-library
+      - POSTGRES_DB=go-basic-library
+    volumes:
+      - go-basic-library:/var/lib/postgresql/data
+volumes:
+  go-basic-library:
